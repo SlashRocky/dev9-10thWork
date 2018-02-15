@@ -1,0 +1,409 @@
+/* ----------------------------------------------------------------------
+basic setting
+---------------------------------------------------------------------- */
+
+a img {
+  border: none;
+  verticle-align: top;
+}
+
+a,
+a:visited {
+  outline: none;
+  color: #333;
+}
+
+a:hover {}
+
+p {
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  line-height: 240%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 0 2em 0;
+  padding: 0;
+  line-height: 0%;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  zoom: 1;
+}
+
+ol {
+  margin: 0 0 2em 19px;
+  padding: 0;
+}
+
+ol li {
+  padding: 0 0 5px 0;
+  line-height: normal;
+}
+
+dl {
+  list-style-type: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+  line-height: 0%;
+}
+
+dl dt,
+dl dd {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  zoom: 1;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+form,
+table,
+input,
+textarea,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 0;
+}
+
+cite {
+  text-align: right;
+  display: block;
+}
+
+object {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+}
+
+del {
+  color: #333;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 40px 0;
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clear {
+  clear: both;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+  p {
+  line-height: 2;
+  margin: 0 0 2em 0;
+}
+
+/* headline */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 140%;
+}
+
+h3 {
+  font-size: 130%;
+}
+
+h4 {
+  font-size: 120%;
+}
+
+h5 {
+  font-size: 110%;
+}
+
+h6 {
+  font-size: 100%;
+}
+
+/* image */
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+img.centered,
+div.centered {
+  display: block;
+  margin: 15px auto;
+}
+
+img.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 15px auto;
+}
+
+img.alignright,
+div.alignright {
+  margin: 10px 0 30px 30px;
+  display: inline;
+}
+
+img.alignleft,
+div.alignleft {
+  margin: 10px 30px 30px 0;
+  display: inline;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #ccc;
+  max-width: 96%;
+  padding: 14px 3px 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.wp-caption img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.wp-caption .wp-caption-text {
+  padding: 10px 0 0;
+}
+
+/* table */
+
+table {
+  margin: 0 0 24px 0;
+}
+
+td,
+th {
+  border: 1px solid #ccc;
+  padding: 10px 15px 7px;
+  line-height: 2;
+}
+
+th {
+  background: #f2f2f2;
+  font-weight: normal;
+}
+
+/* block quote */
+
+blockquote {
+  margin: 0 0 24px 0;
+  padding: 27px 30px 1px;
+  background: #f2f2f2;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+}
+
+blockquote:before {
+  content: '"';
+  font-style: italic;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 40px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  color: #999;
+}
+
+blockquote:after {
+  content: '"';
+  font-style: italic;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: left;
+  line-height: 60px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 7px;
+  right: -2px;
+  color: #999;
+}
+
+/* list */
+
+li,
+dt,
+dd {
+  line-height: 2;
+}
+
+ul,
+ol,
+dl {
+  margin-bottom: 24px;
+}
+
+ol {
+  list-style: decimal outside none;
+  margin-left: 1.5em;
+}
+
+ul {
+  list-style: disc outside none;
+  margin-left: 1.3em;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 1em;
+}
+
+/* captions */
+
+.wp-caption {
+  margin-bottom: 24px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  max-width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.wp-caption-text {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 2;
+  margin: 9px auto;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* etc */
+
+pre {
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+  background: #f2f2f2;
+  padding: 15px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* next page */
+
+#post_pagination {
+  margin: 0 0 30px 0;
+  clear: both;
+}
+
+#post_pagination h5 {
+  margin: 0 10px 0 0;
+  float: left;
+  line-height: 30px;
+  font-size: 12px;
+}
+
+#post_pagination a,
+#post_pagination p {
+  float: left;
+  display: inline-block;
+  background: #eee;
+  margin: 0 5px 0 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+#post_pagination p {
+  background: #999;
+  color: #fff;
+}
+
+#post_pagination a:hover {
+  background: #333;
+  color: #fff;
+}
