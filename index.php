@@ -98,6 +98,8 @@
     <!-- css -->
     <link rel="stylesheet" href="lib/css/style.css">
     <link rel="stylesheet" href="lib/css/memo.css">
+    <link rel="stylesheet" href="lib/css/rate.css">
+    
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
@@ -230,36 +232,39 @@
           <div class="container">
             <div class="wrapper">
               <div id="st-accordion" class="st-accordion">
-                <ul class="memo-list">
-
-                  <?php 
-                    print_r($ask_bf);
-                    echo '　';
-                    print_r($bid_bf);
-                    echo '　';
-
-                    print_r($ask_zf);
-                    echo '　';
-                    print_r($bid_zf);
-                    echo '　';
-
-                    print_r($ask_cc);
-                    echo '　';
-                    print_r($bid_cc);
-                    echo '　';
-
-                    print_r($ask_qx);
-                    echo '　';
-                    print_r($bid_qx);
-                    echo '　';
-
-                    print_r($ask_bb);
-                    echo '　';
-                    print_r($bid_bb);
-                    echo '　';
-                  ?>
-
-                </ul>
+                <table style="width:90%;">
+                  <tbody><tr>
+                    <th style="width:20%;"><center>取引所</center></th>
+                    <th style="width:40%;"><center>買値</center></th>
+                    <th style="width:40%;"><center>売値</center></th>
+                    </tr>
+                    <tr>
+                      <td><center>bitFlyer</center></td>
+                      <td><center><?=$ask_bf?></center></td>
+                      <td><center><?=$bid_bf?></center></td>
+                    </tr>
+                    <tr>
+                      <td><center>zaif</center></td>
+                      <td><center><?=$ask_zf?></center></td>
+                      <td><center><?=$bid_zf?></center></td>
+                    </tr>
+                    <tr>
+                      <td><center>coincheck</center></td>
+                      <td><center><?=$ask_cc?></center></td>
+                      <td><center><?=$bid_cc?></center></td>
+                    </tr>
+                    <tr>
+                      <td><center>Quoinex</center></td>
+                      <td><center><?=$ask_qx?></center></td>
+                      <td><center><?=$bid_qx?></center></td>
+                    </tr>
+                    <tr>
+                      <td><center>bitbank</center></td>
+                      <td><center><font color="blue"><b><?=$ask_bb?></b></font></center></td>
+                      <td><center><?=$bid_bb?></center></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
