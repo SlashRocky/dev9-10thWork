@@ -8,9 +8,9 @@
   $json_decode_bf = json_decode($file_get_bf,true);
 
   //売値
-  $ask_bf = $json_decode_bf["ask"];
+  $ask_bf = number_format($json_decode_bf["ask"]);
   //買値
-  $bid_bf = $json_decode_bf["bid"];
+  $bid_bf = number_format($json_decode_bf["bid"]);
 
   /* ----------------------------------------
   ZaifのAPIに接続 -> 値を取得
@@ -21,9 +21,9 @@
   $json_decode_zf = json_decode($file_get_zf,true);
 
   //売値
-  $ask_zf = $json_decode_zf["ask"];
+  $ask_zf = number_format($json_decode_zf["ask"]);
   //買値
-  $bid_zf = $json_decode_zf["bid"];
+  $bid_zf = number_format($json_decode_zf["bid"]);
 
   /* ----------------------------------------
   coincheckのAPIに接続 -> 値を取得
@@ -34,9 +34,9 @@
   $json_decode_cc = json_decode($file_get_cc,true);
 
   //売値
-  $ask_cc = $json_decode_cc["ask"];
+  $ask_cc = number_format($json_decode_cc["ask"]);
   //買値
-  $bid_cc = $json_decode_cc["bid"];
+  $bid_cc = number_format($json_decode_cc["bid"]);
 
   /* ----------------------------------------
   QuoinexのAPIに接続 -> 値を取得
@@ -47,9 +47,9 @@
   $json_decode_qx = json_decode($file_get_qx,true);
 
   //売値
-  $ask_qx = $json_decode_qx["high_market_ask"];
+  $ask_qx = number_format($json_decode_qx["high_market_ask"]);
   //買値
-  $bid_qx = $json_decode_qx["low_market_bid"];
+  $bid_qx = number_format($json_decode_qx["low_market_bid"]);
 
   /* ----------------------------------------
   bitbankのAPIに接続 -> 値を取得
@@ -63,6 +63,16 @@
   $ask_bb = number_format( ceil($json_decode_bb["data"]["asks"]["0"]["0"]) );
   //買値
   $bid_bb = number_format( ceil($json_decode_bb["data"]["bids"]["0"]["0"]) );
+
+  /* ----------------------------------------
+  売値の最高値
+  ---------------------------------------- */
+  $max_ask = max($ask_bf, $ask_zf, $ask_cc, $ask_qx, $ask_bb);
+
+  /* ----------------------------------------
+  買値の最安値
+  ---------------------------------------- */
+  $min_bid = min($bid_bf, $bid_zf, $bid_cc, $bid_qx, $bid_bb);
 ?>
 
 <!doctype html>
@@ -98,7 +108,7 @@
     <!-- css -->
     <link rel="stylesheet" href="lib/css/style.css">
     <link rel="stylesheet" href="lib/css/memo.css">
-		<link rel="stylesheet" href="lib/css/rate.css">
+    <link rel="stylesheet" href="lib/css/rate.css">
     
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
@@ -235,37 +245,39 @@
                 <table style="width:100%;">
                   <tbody>
                     <tr>
-											<th style="width:20%; background-color:#378aa3; color:#fff;"><center>取引所</center></th>
-											<th style="width:40%; background-color:#378aa3; color:#fff;"><center>売値</center></th>
-											<th style="width:40%; background-color:#378aa3; color:#fff;"><center>買値</center></th>
+                      <th style="width:20%; background-color:#378aa3; color:#fff;"><center>取引所</center></th>
+                      <th style="width:40%; background-color:#378aa3; color:#fff;"><center>売値</center></th>
+                      <th style="width:40%; background-color:#378aa3; color:#fff;"><center>買値</center></th>
                     </tr>
                     <tr>
-											<td style="background-color:#e6f1f4;"><center>bitFlyer</center></td>
-											<td style="background-color:#e6f1f4;"><center><?=$bid_bf?></center></td>
-											<td style="background-color:#e6f1f4;"><center><?=$ask_bf?></center></td>
+                      <td style="background-color:#e6f1f4;"><center>bitFlyer</center></td>
+                      <td style="background-color:#e6f1f4;"><center><?=$ask_bf?></center></td>
+                      <td style="background-color:#e6f1f4;"><center><?=$bid_bf?></center></td>
                     </tr>
                     <tr>
-											<td style="background-color:#f8f8fc;"><center>zaif</center></td>
-											<td style="background-color:#f8f8fc;"><center><?=$bid_zf?></center></td>
-											<td style="background-color:#f8f8fc;"><center><?=$ask_zf?></center></td>
+                      <td style="background-color:#f8f8fc;"><center>zaif</center></td>
+                      <td style="background-color:#f8f8fc;"><center><?=$ask_zf?></center></td>
+                      <td style="background-color:#f8f8fc;"><center><?=$bid_zf?></center></td>
                     </tr>
                     <tr>
-											<td style="background-color:#e6f1f4;"><center>coincheck</center></td>
-											<td style="background-color:#e6f1f4;"><center><?=$bid_cc?></center></td>
-											<td style="background-color:#e6f1f4;"><center><?=$ask_cc?></center></td>
+                      <td style="background-color:#e6f1f4;"><center>coincheck</center></td>
+                      <td style="background-color:#e6f1f4;"><center><?=$ask_cc?></center></td>
+                      <td style="background-color:#e6f1f4;"><center><?=$bid_cc?></center></td>
                     </tr>
                     <tr>
-											<td style="background-color:#f8f8fc;"><center>Quoinex</center></td>
-											<td style="background-color:#f8f8fc;"><center><?=$bid_qx?></center></td>
-											<td style="background-color:#f8f8fc;"><center><?=$ask_qx?></center></td>
+                      <td style="background-color:#f8f8fc;"><center>Quoinex</center></td>
+                      <td style="background-color:#f8f8fc;"><center><?=$ask_qx?></center></td>
+                      <td style="background-color:#f8f8fc;"><center><?=$bid_qx?></center></td>
                     </tr>
                     <tr>
-											<td style="background-color:#e6f1f4;"><center>bitbank</center></td>
-											<td style="background-color:#e6f1f4;"><center><?=$bid_bb?></center></td>
-											<td style="background-color:#e6f1f4;"><center><font color="blue"><b><?=$ask_bb?></b></font></center></td>
+                      <td style="background-color:#e6f1f4;"><center>bitbank</center></td>
+                      <td style="background-color:#e6f1f4;"><center><?=$ask_bb?></center></td>
+                      <td style="background-color:#e6f1f4;"><center><font color="blue"><b><?=$bid_bb?></b></font></center></td>
                     </tr>
                   </tbody>
                 </table>
+                <?php echo $max_ask ?><br />
+                <?php echo $min_bid ?><br />
               </div>
             </div>
           </div>
@@ -314,7 +326,7 @@
     </div>
 
     <!-- memo JS -->
-		<!--<script src="lib/js/rate.js"></script>-->
+    <script src="lib/js/rate.js"></script>
     
     <!-- memo JS -->
     <script src="lib/js/memo.js"></script>
