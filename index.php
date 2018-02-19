@@ -98,7 +98,7 @@
     <!-- css -->
     <link rel="stylesheet" href="lib/css/style.css">
     <link rel="stylesheet" href="lib/css/memo.css">
-    <link rel="stylesheet" href="lib/css/rate.css">
+		<link rel="stylesheet" href="lib/css/rate.css">
     
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
@@ -232,36 +232,37 @@
           <div class="container">
             <div class="wrapper">
               <div id="st-accordion" class="st-accordion">
-                <table style="width:90%;">
-                  <tbody><tr>
-                    <th style="width:20%;"><center>取引所</center></th>
-                    <th style="width:40%;"><center>買値</center></th>
-                    <th style="width:40%;"><center>売値</center></th>
+                <table style="width:100%;">
+                  <tbody>
+                    <tr>
+											<th style="width:20%; background-color:#378aa3; color:#fff;"><center>取引所</center></th>
+											<th style="width:40%; background-color:#378aa3; color:#fff;"><center>売値</center></th>
+											<th style="width:40%; background-color:#378aa3; color:#fff;"><center>買値</center></th>
                     </tr>
                     <tr>
-                      <td><center>bitFlyer</center></td>
-                      <td><center><?=$ask_bf?></center></td>
-                      <td><center><?=$bid_bf?></center></td>
+											<td style="background-color:#e6f1f4;"><center>bitFlyer</center></td>
+											<td style="background-color:#e6f1f4;"><center><?=$bid_bf?></center></td>
+											<td style="background-color:#e6f1f4;"><center><?=$ask_bf?></center></td>
                     </tr>
                     <tr>
-                      <td><center>zaif</center></td>
-                      <td><center><?=$ask_zf?></center></td>
-                      <td><center><?=$bid_zf?></center></td>
+											<td style="background-color:#f8f8fc;"><center>zaif</center></td>
+											<td style="background-color:#f8f8fc;"><center><?=$bid_zf?></center></td>
+											<td style="background-color:#f8f8fc;"><center><?=$ask_zf?></center></td>
                     </tr>
                     <tr>
-                      <td><center>coincheck</center></td>
-                      <td><center><?=$ask_cc?></center></td>
-                      <td><center><?=$bid_cc?></center></td>
+											<td style="background-color:#e6f1f4;"><center>coincheck</center></td>
+											<td style="background-color:#e6f1f4;"><center><?=$bid_cc?></center></td>
+											<td style="background-color:#e6f1f4;"><center><?=$ask_cc?></center></td>
                     </tr>
                     <tr>
-                      <td><center>Quoinex</center></td>
-                      <td><center><?=$ask_qx?></center></td>
-                      <td><center><?=$bid_qx?></center></td>
+											<td style="background-color:#f8f8fc;"><center>Quoinex</center></td>
+											<td style="background-color:#f8f8fc;"><center><?=$bid_qx?></center></td>
+											<td style="background-color:#f8f8fc;"><center><?=$ask_qx?></center></td>
                     </tr>
                     <tr>
-                      <td><center>bitbank</center></td>
-                      <td><center><font color="blue"><b><?=$ask_bb?></b></font></center></td>
-                      <td><center><?=$bid_bb?></center></td>
+											<td style="background-color:#e6f1f4;"><center>bitbank</center></td>
+											<td style="background-color:#e6f1f4;"><center><?=$bid_bb?></center></td>
+											<td style="background-color:#e6f1f4;"><center><font color="blue"><b><?=$ask_bb?></b></font></center></td>
                     </tr>
                   </tbody>
                 </table>
@@ -313,7 +314,7 @@
     </div>
 
     <!-- memo JS -->
-    <script src="lib/js/rate.js"></script>
+		<!--<script src="lib/js/rate.js"></script>-->
     
     <!-- memo JS -->
     <script src="lib/js/memo.js"></script>

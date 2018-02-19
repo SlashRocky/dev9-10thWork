@@ -4,7 +4,7 @@ basic setting
 
 a img {
   border: none;
-  verticle-align: top;
+  vertical-align: top;
 }
 
 a,
@@ -23,7 +23,7 @@ p {
 
 ul {
   list-style-type: none;
-  margin: 0 0 2em 0;
+	/*margin: 0 0 2em 0;*/
   padding: 0;
   line-height: 0%;
 }
@@ -47,7 +47,7 @@ ol li {
 
 dl {
   list-style-type: none;
-  margin: 0 0 1em 0;
+	/*margin: 0 0 1em 0;*/
   padding: 0;
   line-height: 0%;
 }
@@ -292,10 +292,11 @@ blockquote:after {
 
 /* list */
 
+/*
 li,
 dt,
 dd {
-  line-height: 2;
+	line-height: 2;
 }
 
 ul,
@@ -305,12 +306,12 @@ dl {
 }
 
 ol {
-  list-style: decimal outside none;
+	list-style: decimal outside none;
   margin-left: 1.5em;
 }
 
 ul {
-  list-style: disc outside none;
+	list-style: disc outside none;
   margin-left: 1.3em;
 }
 
@@ -326,9 +327,11 @@ dt {
 dd {
   margin-bottom: 1em;
 }
+*/
 
 /* captions */
 
+/*
 .wp-caption {
   margin-bottom: 24px;
   background: #fff;
@@ -352,6 +355,7 @@ dd {
   display: block;
   margin: 0 auto;
 }
+*/
 
 /* etc */
 
