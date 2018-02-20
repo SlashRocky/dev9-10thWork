@@ -1,80 +1,3 @@
-<?php
-  /* ----------------------------------------
-  bitFlyerのAPIに接続 -> 値を取得
-  ---------------------------------------- */
-  $base_url_bf = "https://bitflyer.jp/api/echo/price";
-  $access_url_bf = $base_url_bf;
-  $file_get_bf = file_get_contents($access_url_bf);
-  $json_decode_bf = json_decode($file_get_bf,true);
-
-  //売値
-  $ask_bf = number_format($json_decode_bf["ask"]);
-  //買値
-  $bid_bf = number_format($json_decode_bf["bid"]);
-
-  /* ----------------------------------------
-  ZaifのAPIに接続 -> 値を取得
-  ---------------------------------------- */
-  $base_url_zf = "https://api.zaif.jp/api/1/ticker/btc_jpy";
-  $access_url_zf = $base_url_zf;
-  $file_get_zf = file_get_contents($access_url_zf);
-  $json_decode_zf = json_decode($file_get_zf,true);
-
-  //売値
-  $ask_zf = number_format($json_decode_zf["ask"]);
-  //買値
-  $bid_zf = number_format($json_decode_zf["bid"]);
-
-  /* ----------------------------------------
-  coincheckのAPIに接続 -> 値を取得
-  ---------------------------------------- */
-  $base_url_cc = "https://coincheck.com/api/ticker/";
-  $access_url_cc = $base_url_cc;
-  $file_get_cc = file_get_contents($access_url_cc);
-  $json_decode_cc = json_decode($file_get_cc,true);
-
-  //売値
-  $ask_cc = number_format($json_decode_cc["ask"]);
-  //買値
-  $bid_cc = number_format($json_decode_cc["bid"]);
-
-  /* ----------------------------------------
-  QuoinexのAPIに接続 -> 値を取得
-  ---------------------------------------- */
-  $base_url_qx = "https://api.quoine.com/products/code/CASH/BTCJPY";
-  $access_url_qx = $base_url_qx;
-  $file_get_qx = file_get_contents($access_url_qx);
-  $json_decode_qx = json_decode($file_get_qx,true);
-
-  //売値
-  $ask_qx = number_format($json_decode_qx["high_market_ask"]);
-  //買値
-  $bid_qx = number_format($json_decode_qx["low_market_bid"]);
-
-  /* ----------------------------------------
-  bitbankのAPIに接続 -> 値を取得
-  ---------------------------------------- */
-  $base_url_bb = "https://public.bitbank.cc/btc_jpy/depth";
-  $access_url_bb = $base_url_bb;
-  $file_get_bb = file_get_contents($access_url_bb);
-  $json_decode_bb = json_decode($file_get_bb,true);
-
-  //売値
-  $ask_bb = number_format( ceil($json_decode_bb["data"]["asks"]["0"]["0"]) );
-  //買値
-  $bid_bb = number_format( ceil($json_decode_bb["data"]["bids"]["0"]["0"]) );
-
-  /* ----------------------------------------
-  売値の最高値
-  ---------------------------------------- */
-  $max_ask = max($ask_bf, $ask_zf, $ask_cc, $ask_qx, $ask_bb);
-
-  /* ----------------------------------------
-  買値の最安値
-  ---------------------------------------- */
-  $min_bid = min($bid_bf, $bid_zf, $bid_cc, $bid_qx, $bid_bb);
-?>
-
 <!doctype html>
 <!--[if lt IE 7]><html lang="ja" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html lang="ja" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
@@ -251,33 +174,32 @@
                     </tr>
                     <tr>
                       <td style="background-color:#e6f1f4;"><center>bitFlyer</center></td>
-                      <td style="background-color:#e6f1f4;"><center><?=$ask_bf?></center></td>
-                      <td style="background-color:#e6f1f4;"><center><?=$bid_bf?></center></td>
+                      <td style="background-color:#e6f1f4;"><center id="ask_bf"></center></td>
+                      <td style="background-color:#e6f1f4;"><center id="bid_bf"></center></td>
                     </tr>
                     <tr>
                       <td style="background-color:#f8f8fc;"><center>zaif</center></td>
-                      <td style="background-color:#f8f8fc;"><center><?=$ask_zf?></center></td>
-                      <td style="background-color:#f8f8fc;"><center><?=$bid_zf?></center></td>
+                      <td style="background-color:#f8f8fc;"><center id="ask_zf"></center></td>
+                      <td style="background-color:#f8f8fc;"><center id="bid_zf"></center></td>
                     </tr>
                     <tr>
                       <td style="background-color:#e6f1f4;"><center>coincheck</center></td>
-                      <td style="background-color:#e6f1f4;"><center><?=$ask_cc?></center></td>
-                      <td style="background-color:#e6f1f4;"><center><?=$bid_cc?></center></td>
+                      <td style="background-color:#e6f1f4;"><center id="ask_cc"></center></td>
+                      <td style="background-color:#e6f1f4;"><center id="bid_cc"></center></td>
                     </tr>
                     <tr>
                       <td style="background-color:#f8f8fc;"><center>Quoinex</center></td>
-                      <td style="background-color:#f8f8fc;"><center><?=$ask_qx?></center></td>
-                      <td style="background-color:#f8f8fc;"><center><?=$bid_qx?></center></td>
+                      <td style="background-color:#f8f8fc;"><center id="ask_qx"></center></td>
+                      <td style="background-color:#f8f8fc;"><center id="bid_qx"></center></td>
                     </tr>
                     <tr>
                       <td style="background-color:#e6f1f4;"><center>bitbank</center></td>
-                      <td style="background-color:#e6f1f4;"><center><?=$ask_bb?></center></td>
-                      <td style="background-color:#e6f1f4;"><center><font color="blue"><b><?=$bid_bb?></b></font></center></td>
+                      <td style="background-color:#e6f1f4;"><center id="ask_bb"></center></td>
+                      <td style="background-color:#e6f1f4;"><center id="bid_bb"></center></td>
                     </tr>
                   </tbody>
                 </table>
-                <?php echo $max_ask ?><br />
-                <?php echo $min_bid ?><br />
+                
               </div>
             </div>
           </div>
