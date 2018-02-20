@@ -121,6 +121,17 @@
       });
     </script>
 
+		<!-- 日付時刻ライブラリ -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+		<!-- チャートライブラリ -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+		<!-- Chart.js のストリーミング拡張プラグイン -->
+		<script type="text/javascript" src="https://github.com/nagix/chartjs-plugin-streaming/releases/download/v1.2.0/chartjs-plugin-streaming.js"></script>
+		<!-- Pub/Sub メッセージングライブラリ -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.1.0/pusher.js"></script>
+
+		<script type="text/javascript" src="lib/js/chart.js"></script>
+
   </head>
 
   <body itemscope itemtype="http://schema.org/WebPage" onLoad="tm()">
@@ -165,6 +176,7 @@
           <div class="container">
             <div class="wrapper">
               <div id="st-accordion" class="st-accordion">
+               
                 <table style="width:100%;">
                   <tbody>
                     <tr>
@@ -199,6 +211,8 @@
                     </tr>
                   </tbody>
                 </table>
+                
+								<canvas id="coincheck" style="display: block; width: 820px; height: 595px;">CoinCheck</canvas>
                 
               </div>
             </div>
