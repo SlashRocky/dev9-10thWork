@@ -88,8 +88,8 @@
     'bid_cc' => $bid_cc,
     'bid_qx' => $bid_qx,
     'bid_bb' => $bid_bb,
-		'max_ask' => $max_ask,
-		'min_bid' => $min_bid
+    'max_ask' => $max_ask,
+    'min_bid' => $min_bid
   );
 
   /* ----------------------------------------
